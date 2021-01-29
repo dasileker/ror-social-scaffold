@@ -1,0 +1,6 @@
+<%= simple_form_for @invitation do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :friend_id, :value => friend.id %>
+  <%= f.hidden_field :status, :value => false %>
+  <%= f.button :submit, "Send invitation" %>
+<% end %>

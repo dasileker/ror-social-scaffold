@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 module ApplicationHelper
   def menu_link_to(link_text, link_path)
     class_name = current_page?(link_path) ? 'menu-item active' : 'menu-item'
@@ -15,4 +16,14 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def button(friend)
+    if !Friendship.exists?(user_id: current_user.id, friend_id: friend.id) && !Friendship.exists?(user_id: friend.id, friend_id: current_user.id)
+      render 'friendship/add_btn', friend: friend
+    elsif Friendship.exists?(user_id: current_user.id, friend_id: friend.id, status: false)
+      render 'friendship/pending_btn'
+    end
+  end
 end
+
+# rubocop:enable Layout/LineLength

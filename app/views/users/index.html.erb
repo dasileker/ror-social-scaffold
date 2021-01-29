@@ -1,5 +1,9 @@
 <section class="users-section">
+  <h1> All Users </h1>
   <ul class="users-list">
-    <%= render @users %>
+    <% @users.each do |friend| %>
+      <h4><%= link_to friend.name, user_path(friend) %></h4>
+      <%= button(friend) %>
+    <% end %>
   </ul>
 </section>

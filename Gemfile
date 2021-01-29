@@ -38,6 +38,7 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +47,7 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -56,6 +58,7 @@ group :development do
   gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
