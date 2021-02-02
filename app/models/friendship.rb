@@ -1,7 +1,6 @@
 class Friendship < ApplicationRecord
   belongs_to :user
-  belongs_to :friend, :class_name => "User"
-
+  belongs_to :friend, class_name: 'User'
 
   validate :users_friends
 
@@ -19,6 +18,4 @@ class Friendship < ApplicationRecord
     reverse_fs.save
     # rubocop:enable Layout/LineLength
   end
-
-  
 end

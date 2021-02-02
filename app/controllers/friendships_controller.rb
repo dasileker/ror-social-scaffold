@@ -1,4 +1,4 @@
-class FriendshipController < ApplicationController
+class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(friend_id: params[:user_id])
     @friendship.status = false
@@ -27,11 +27,5 @@ class FriendshipController < ApplicationController
     f1&.destroy
     f2&.destroy
     redirect_to users_path
-  end
-
-  private
-
-  def friendship_params
-    params.require(:friendship).permit(:user_id, :friend_id, :status)
   end
 end
