@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
 $primary-color-dark: #689f38;
 $primary-color: #8bc34a;
@@ -16,7 +16,7 @@ $divider-color: #bdbdbd;
 body {
   background: #fff;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 
@@ -35,19 +35,26 @@ a {
   color: $primary-color-text;
 }
 
-.user-button {
-  padding: 0.5rem;
-  margin: 0 10px;
-  background-color: $primary-color;
-  border-radius: 10px;
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 16px 48px;
   background-color: $primary-color-dark;
   color: $primary-color-light;
+
+  a {
+    color: $primary-color-light;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  .active a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #fff;
+  }
 
   .menu {
     width: 80%;
@@ -56,24 +63,8 @@ a {
     .menu-item {
       float: left;
       margin: 0 15px;
-
-      .active {
-        a {
-          color: #fff;
-        }
-      }
     }
   }
-}
-
-.nav a {
-  color: $primary-color-light;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.nav a:hover {
-  color: #fff;
 }
 
 .main {
@@ -107,83 +98,6 @@ a {
   color: red;
 }
 
-form {
-  width: 80%;
-  margin: 8px 0;
-
-  .field {
-    width: 100%;
-    padding: 8px 0px;
-    label {
-      margin-bottom: 8px;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid $divider-color;
-      border-radius: 4px;
-      padding: 8px;
-      background-color: $primary-color-light;
-    }
-
-    input[type='checkbox'] {
-      width: fit-content;
-    }
-  }
-
-  .actions {
-    display: flex;
-    justify-content: center;
-    margin: 8px 0;
-  }
-  input[type='submit'] {
-    padding: 8px;
-    width: 80%;
-    border: none;
-    border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
-    text-transform: uppercase;
-    font-weight: 900;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  input[type='submit']:hover {
-    background-color: $primary-color;
-    color: #fff;
-  }
-
-  .actions.reset {
-    input[type='submit'] {
-      width: 100%;
-    }
-  }
-
-  #error_explanation {
-    h2 {
-      color: $primary-color-text;
-      font-size: 1em;
-    }
-    ul {
-      color: #f00;
-    }
-  }
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 16px;
-  text-transform: capitalize;
-}
-
-.comments {
-  background-color: $primary-color-light;
-  padding: 0.8em;
-  display: inline-block;
-  margin: 5px 5px;
-}
 .new_post,
 .new_comment {
   display: flex;
@@ -220,6 +134,66 @@ form {
     width: 30%;
     margin-left: 70%;
   }
+}
+
+form {
+  width: 80%;
+  margin: 8px 0;
+
+  .field {
+    width: 100%;
+    padding: 8px 0;
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $divider-color;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: $primary-color-light;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+
+  input[type="submit"] {
+    padding: 8px;
+    width: 50%;
+    border: none;
+    border-radius: 4px;
+    background-color: $primary-color-dark;
+    color: $primary-color-light;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  input[type="submit"]:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  .actions.reset {
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: capitalize;
 }
 
 .timeline {
@@ -263,6 +237,7 @@ form {
       font-size: 0.9em;
       margin: 0 4px;
     }
+
     .post-date {
       font-size: 0.6em;
     }
@@ -290,6 +265,7 @@ form {
         font-size: 0.8em;
         width: 90%;
       }
+
       span {
         position: absolute;
         right: 3px;
@@ -310,18 +286,10 @@ form {
   }
 
   .profile-link {
-    font-size: 1em;
+    font-size: 0.8em;
     margin: 0 0 8px 0;
     color: $primary-color-dark;
-    &:hover {
-      text-decoration: underline;
-    }
   }
-}
-
-.profile-item {
-  display: flex;
-  align-items: center;
 }
 
 .user-section {
@@ -334,10 +302,23 @@ form {
 
   .timeline {
     width: 100%;
+
     h3 {
       width: 100%;
     }
+
     justify-content: start;
+  }
+}
+
+#error_explanation {
+  h2 {
+    color: $primary-color-text;
+    font-size: 1em;
+  }
+
+  ul {
+    color: #f00;
   }
 }
 
