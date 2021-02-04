@@ -1,4 +1,4 @@
-# rubocop: disable Lint/UselessAssignment
+# rubocop: disable Lint/UselessAssignment Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
 module UsersHelper
   def button_display(user)
     if current_user.friend?(user)
@@ -19,4 +19,4 @@ module UsersHelper
   end
 end
 
-# rubocop: enable Lint/UselessAssignment
+# rubocop: enable Lint/UselessAssignment Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
