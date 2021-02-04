@@ -1,5 +1,4 @@
-# rubocop:disable Lint/UselessAssignment
-# rubocop:disable Layout/LineLength
+# rubocop: disable Lint/UselessAssignment Layout/LineLength Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
 
 module UsersHelper
   def button_display(user)
@@ -19,5 +18,4 @@ module UsersHelper
     end
   end
 end
-# rubocop:enable Lint/UselessAssignment
-# rubocop:enable Layout/LineLength
+# rubocop: enable Lint/UselessAssignment Layout/LineLength Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
