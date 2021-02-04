@@ -1,9 +1,12 @@
-# rubocop: disable Lint/UselessAssignment Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
+# rubocop:disable Lint/UselessAssignment
+# rubocop:disable Layout/LineLength
+# rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity
+
 module UsersHelper
   def button_display(user)
     if current_user.friend?(user)
-      val = link_to 'Remove Friend', friendship_path(id: current_user.id, user_id: user.id),
-                    method: :delete, class: 'user-button'
+      val = link_to 'Remove Friend', friendship_path(id: current_user.id, user_id: user.id), method: :delete, class: 'user-button'
       val += '  You are Friends'
     elsif current_user.pending_friends.include?(user)
       val = link_to 'Cancel Request', cancel_path(user_id: user.id), method: :post, class: 'user-button'
@@ -18,5 +21,7 @@ module UsersHelper
     end
   end
 end
-
-# rubocop: enable Lint/UselessAssignment Metrics/CyclomaticComplexity Metrics/PerceivedComplexity
+# rubocop:enable Lint/UselessAssignment
+# rubocop:enable Layout/LineLength
+# rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity
