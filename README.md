@@ -25,6 +25,11 @@ Ruby: 2.6.3
 Rails: 5.2.3
 Postgres: >=9.5
 
+
+### Live Demo
+
+[link] ror-social-scaffold (https://ror-social-scaffolds.herokuapp.com/users/sign_in)
+
 ### Setup
 
 Instal gems with:
